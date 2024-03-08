@@ -94,15 +94,7 @@ def pick_text_translator(sourcetext, inputlanguage, outputlanguage):
             messages=[
                 {
                     "role": "user",
-                    "content": f"Source text: {sourcetext}"
-                },
-                {
-                    "role": "user",
-                    "content": f"Translation1: {google_translated_text}"
-                },
-                {
-                    "role": "user",
-                    "content": f"Translation2: {translate_text(sourcetext, inputlanguage, outputlanguage)}"
+                    "content": f"Source text: {sourcetext}\nTranslation1: {google_translated_text}\nTranslation2: {translate_text(sourcetext, inputlanguage, outputlanguage)}"
                 }
             ]
         )
