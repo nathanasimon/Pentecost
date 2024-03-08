@@ -99,21 +99,7 @@
     </style>
 </head>
 <body>
-    <h1>Pentecost</h1>
-    <h1>Translating meaning</h1>
-    <table style="margin-bottom: 20px;">
-        <tr>
-            <th>Original Text</th>
-            <th>Your Translation</th>
-            <th>Google Translate</th>
-        </tr>
-        <tr>
-            <td>Dans le labyrinthe dédaléen des rues parisiennes, où le temps, tel un fleuve impétueux, a érodé les façades des bâtiments baroques, se trouve une petite pâtisserie dont la réputation, comme la pâte feuilletée de ses croissants, est légère et aérienne, mais qui, pourtant, est restée inconnue des guides touristiques, préservant ainsi son authenticité.</td>
-            <td><span class="highlight-green">Amidst</span> the <span class="highlight-green">labyrinthine maze</span> of Parisian streets, where time, like a <span class="highlight-green">raging</span> river, has eroded the facades of baroque buildings, there <span class="highlight-green">exists</span> a small <span class="highlight-green">patisserie</span> whose reputation, like the <span class="highlight-green">flaky</span> pastry of its croissants, is light and airy, <span class="highlight-green">yet has somehow remained hidden from the guidebooks,</span> preserving its authenticity.</td>
-            <td><span class="highlight-red">In</span> the <span class="highlight-red">labyrinthine labyrinth</span> of Parisian streets, where time, like an <span class="highlight-red">impetuous</span> river, has eroded the facades of baroque buildings, there <span class="highlight-red">is</span> a small <span class="highlight-red">pastry shop</span> whose reputation, like the <span class="highlight-red">puff</span> pastry of its croissants, is light and airy, <span class="highlight-red">but which, yet, has remained unknown to tourist guides, thus</span> preserving its authenticity.</td>
-        </tr>
-    </table>
-    
+    <h1>Pentecost: Translating Meaning</h1>
     <form action="/" method="post" onsubmit="disableButton()">
         <div>
             <label for="sourceText">Source Text:</label>
@@ -167,5 +153,21 @@
             document.getElementById("translateButton").innerText = "Translating...";
         }
     </script>
+
+        <div style="text-align: center;">
+        <p>Translation Comparison:</p>
+    </div>
+    <table style="margin-bottom: 20px;">
+        <tr>
+            <th>Original Text</th>
+            <th>Your Translation</th>
+            <th>Google Translate</th>
+        </tr>
+        <tr>
+            <td>Dans le labyrinthe dédaléen des rues parisiennes, où le temps, tel un fleuve impétueux, a érodé les façades des bâtiments baroques, se trouve une petite pâtisserie dont la réputation, comme la pâte feuilletée de ses croissants, est légère et aérienne, mais qui, pourtant, est restée inconnue des guides touristiques, préservant ainsi son authenticité.</td>
+            <td><span class="highlight-green">Amidst</span> the <span class="highlight-green">labyrinthine maze</span> of Parisian streets, where time, like a <span class="highlight-green">raging</span> river, has eroded the facades of baroque buildings, there <span class="highlight-green">exists</span> a small <span class="highlight-green">patisserie</span> whose reputation, like the <span class="highlight-green">flaky</span> pastry of its croissants, is light and airy, <span class="highlight-green">yet has somehow remained hidden from the guidebooks,</span> preserving its authenticity.</td>
+            <td><span class="highlight-red">In</span> the <span class="highlight-red">labyrinthine labyrinth</span> of Parisian streets, where time, like an <span class="highlight-red">impetuous</span> river, has eroded the facades of baroque buildings, there <span class="highlight-red">is</span> a small <span class="highlight-red">pastry shop</span> whose reputation, like the <span class="highlight-red">puff</span> pastry of its croissants, is light and airy, <span class="highlight-red">but which, yet, has remained unknown to tourist guides, thus</span> preserving its authenticity.</td>
+        </tr>
+    </table>
 </body>
 </html>
