@@ -69,7 +69,7 @@ def translate_text(sourcetext, inputlanguage, outputlanguage):
             prompt = [
                 f"Provide a accurate and quality translation of the following text from {inputlanguage} to {outputlanguage}. The translation should preserve cultural nuances, idiomatic expressions, and genre-specific terminology.",
                 "In addition to translating the text itself, please ensure that the formatting and layout of the translated text mirrors the original text as closely as possible. This includes maintaining consistent naming conventions, terminology, and any specific formatting requirements particular to the genre or style of the text.",
-                "There should be NO errors in the translaiton. The text should be more accurate than Google Translate. I will be reviewing the translation carefully for any errors or inaccuracies. If you are inaccurate, I will lose my job.",
+                "There should be NO errors in the translaiton. The text should be more accurate than Google Translate.",
                 "Input text: ",
                 sourcetext, 
             ]
