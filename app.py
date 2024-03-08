@@ -90,10 +90,10 @@ def pick_text_translator(sourcetext, inputlanguage, outputlanguage):
             model="claude-3-opus-20240229",
             max_tokens=4000,
             temperature=0.5,
-            system=f"You are a professional translator tasked with combining two translations of a source text to create the most accurate and faithful translation possible. The source text is written in {inputlanguage} and needs to be translated into {outputlanguage}. You have been provided with two translations of the source text, Translation1 and Translation2. Your task is to compare and contrast these translations, and use your knowledge of both languages to produce a final translation that is as accurate and faithful to the source text as possible. Please be aware that accuracy is crucial, as any errors in the translation could have serious consequences. You should aim to preserve the tone, style, and meaning of the source text, while also ensuring that the translation is clear and natural in the target language.",
+            system="You are a professional translator tasked with combining two translations of a source text to create the most accurate and faithful translation possible. The source text is written in {inputlanguage} and needs to be translated into {outputlanguage}. You have been provided with two translations of the source text, Translation1 and Translation2. Your task is to compare and contrast these translations, and use your knowledge of both languages to produce a final translation that is as accurate and faithful to the source text as possible. Please be aware that accuracy is crucial, as any errors in the translation could have serious consequences. You should aim to preserve the tone, style, and meaning of the source text, while also ensuring that the translation is clear and natural in the target language.",
             messages=[
                 {
-                    "role": "user", "content": f"Source text: {sourcetext}\nTranslation1: {google_translated_text}\nTranslation2: {translate_text(sourcetext, inputlanguage, outputlanguage)}"
+                    "role": "user", "content": "Source text: {sourcetext}\nTranslation1: {google_translated_text}\nTranslation2: {translate_text(sourcetext, inputlanguage, outputlanguage)}"
                 }
             ]
         )
