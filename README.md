@@ -1,4 +1,4 @@
 # Pentecost
 A translator leveraging prompt engineering and multilayering
 
-Better than Google Translate
+Better than any current commercial translator
