@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentecost</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        h1 {
+            size: 30px;
+        }
+        h2 {
+            size: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        div {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .translation-result {
+            background-color: #e7f4e4;
+            padding: 20px;
+            border-left: 6px solid #4CAF50;
+            margin-top: 20px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f7f7f7;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+        td {
+            vertical-align: top;
+        }
+        .highlight-green {
+            background-color: lightgreen;
+        }
+        .highlight-red {
+            background-color: lightpink;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pentecost</h1>
+    <h1>Translating meaning</h1>
+    <table style="margin-bottom: 20px;">
+        <tr>
+            <th>Original Text</th>
+            <th>Your Translation</th>
+            <th>Google Translate</th>
+        </tr>
+        <tr>
+            <td>Dans le labyrinthe dédaléen des rues parisiennes, où le temps, tel un fleuve impétueux, a érodé les façades des bâtiments baroques, se trouve une petite pâtisserie dont la réputation, comme la pâte feuilletée de ses croissants, est légère et aérienne, mais qui, pourtant, est restée inconnue des guides touristiques, préservant ainsi son authenticité.</td>
+            <td><span class="highlight-green">Amidst</span> the <span class="highlight-green">labyrinthine maze</span> of Parisian streets, where time, like a <span class="highlight-green">raging</span> river, has eroded the facades of baroque buildings, there <span class="highlight-green">exists</span> a small <span class="highlight-green">patisserie</span> whose reputation, like the <span class="highlight-green">flaky</span> pastry of its croissants, is light and airy, <span class="highlight-green">yet has somehow remained hidden from the guidebooks,</span> preserving its authenticity.</td>
+            <td><span class="highlight-red">In</span> the <span class="highlight-red">labyrinthine labyrinth</span> of Parisian streets, where time, like an <span class="highlight-red">impetuous</span> river, has eroded the facades of baroque buildings, there <span class="highlight-red">is</span> a small <span class="highlight-red">pastry shop</span> whose reputation, like the <span class="highlight-red">puff</span> pastry of its croissants, is light and airy, <span class="highlight-red">but which, yet, has remained unknown to tourist guides, thus</span> preserving its authenticity.</td>
+        </tr>
+    </table>
+    
+    <form action="/" method="post" onsubmit="disableButton()">
+        <div>
+            <label for="sourceText">Source Text:</label>
+            <textarea id="sourceText" name="sourceText" rows="10" cols="50">{{ sourcetext }}</textarea>
+        </div>
+        <div>
+            <label for="inputlanguage">Input Language:</label>
+            <select id="inputlanguage" name="inputlanguage" required>
+                <option value="English">English</option>
+                <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+                <option value="Chinese (Traditional)">Chinese (Traditional)</option>
+                <option value="Korean">Korean</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Spanish">Spanish</option>
+                <option value="French">French</option>
+                <option value="Russian">Russian</option>
+                <option value="Portuguese">Portuguese</option>
+                <option value="German">German</option>
+                <option value="Arabic">Arabic</option>
+            </select>
+        </div>
+        <div>
+            <label for="outputlanguage">Output Language:</label>
+            <select id="outputlanguage" name="outputlanguage" required>
+                <option value="English">English</option>
+                <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+                <option value="Chinese (Traditional)">Chinese (Traditional)</option>
+                <option value="Korean">Korean</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Spanish">Spanish</option>
+                <option value="French">French</option>
+                <option value="Russian">Russian</option>
+                <option value="Portuguese">Portuguese</option>
+                <option value="German">German</option>
+                <option value="Arabic">Arabic</option>
+            </select>
+        </div>
+        <button type="submit" id="translateButton">Translate</button>
+    </form>
+
+    {% if translated_text %}
+        <div class="translation-result">
+            <h2>Translation Result:</h2>
+            <p>{{ translated_text|safe }}</p>
+        </div>
+    {% endif %}
+
+    <script>
+        function disableButton() {
+            document.getElementById("translateButton").disabled = true;
+            document.getElementById("translateButton").innerText = "Translating...";
+        }
+    </script>
+</body>
+</html>

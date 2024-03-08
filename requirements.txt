@@ -1,0 +1,6 @@
+flask
+python-dotenv
+nltk
+anthropic
+google-cloud-translate==2.0.1
+google-generativeai
